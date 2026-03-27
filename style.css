@@ -619,6 +619,53 @@ img {
 }
 
 /* =========================================
+   NEW: RESULTS COMPARISON BOXES
+   ========================================= */
+
+/* This centers the two boxes and puts a gap between them */
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+    margin: 2rem auto;
+    width: 100%;
+}
+
+/* This creates the small, rounded rectangle shape for the images */
+.compare-box {
+    width: 160px;
+    height: 220px;
+    border-radius: 20px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* This puts the "BEFORE" and "AFTER" labels at the bottom of the boxes */
+.compare-box span {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: #2B201B;
+    padding: 3px 10px;
+    border-radius: 50px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Soft colors for empty boxes (until you add images) */
+.before-box { background-color: #F8F5F2; }
+.after-box { background-color: #E6DCD5; }
+
+/* =========================================
    SPECIALISTS SECTION
    ========================================= */
 .team-section {
