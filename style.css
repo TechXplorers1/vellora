@@ -79,10 +79,10 @@ img {
 
 .btn {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 8px 20px;
     border-radius: var(--radius-pill);
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     cursor: pointer;
     transition: var(--transition);
     border: none;
@@ -139,7 +139,8 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1.5rem 0;
+    height: 70px;
+    padding: 0.8rem 0;
     background-color: #F8F4F0;
     border-bottom: 1px solid rgba(113, 88, 76, 0.15);
     transition: var(--transition);
@@ -147,32 +148,35 @@ img {
 }
 
 .navbar.scrolled {
-    background-color: rgba(248, 244, 240, 0.98);
+    background-color: rgba(249, 244, 240, 0.98);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(113, 88, 76, 0.05);
-    padding: 1.2rem 0;
+   
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 5%;
+    height: 100%;
 }
 
 .logo {
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #544138;
+    line-height: 1;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 3.5rem;
+    gap: 2.0rem;
 }
 
 .nav-link {
@@ -181,7 +185,7 @@ img {
     letter-spacing: 1px;
     color: #7A6961;
     position: relative;
-    padding-bottom: 4px;
+    padding-bottom: 2px;
     text-transform: uppercase;
 }
 
@@ -218,7 +222,7 @@ img {
    ========================================= */
 .hero-section {
     position: relative;
-    padding: 14rem 0 10rem;
+    padding: 9rem 0 10rem;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -231,12 +235,13 @@ img {
 .hero-section::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
     /* Soft warm beige overlay to match the image tint */
-    background-color: rgba(248, 244, 240, 0.35);
+    background-color: rgba(248, 244, 240, 0.75);
+    backdrop-filter: blur(2px);
     z-index: 1;
 }
 
@@ -255,7 +260,7 @@ img {
 .hero-label {
     display: block;
     font-size: 0.85rem;
-    letter-spacing: 4px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--text-color);
     font-weight: 600;
@@ -273,10 +278,10 @@ img {
 
 .hero-desc {
     font-size: 1.25rem;
-    color: #635752;
+    color: #8C7A70;
     margin-bottom: 3.5rem;
     line-height: 1.6;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .hero-buttons {
@@ -307,40 +312,66 @@ img {
    ABOUT SECTION
    ========================================= */
 .about-section {
-    background-color: #EAE3DE;
+    background-color: #E5D8CF;
+    
 }
 
 .about-split {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.8fr 1.0fr;
     align-items: center;
+    gap: 3rem;
+    max-width: 1280px; 
+    margin: 0 auto;
+    padding: 0 5%;
+    
+    
 }
 
 .about-image-wrapper {
-    height: 100%;
+    height: 80%;
+    max-width: 600px;
+    .about-image-wrapper {
+    padding-left: auto;   /* adds space around image */
+}
 }
 
 .about-image {
     width: 100%;
-    height: 100%;
+    height: 60%;
+    aspect-ratio: 1 / 1.1;
     object-fit: cover;
-    min-height: 600px;
+    min-height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(113, 88, 76, 0.08);
 }
 
 .about-content {
-    padding: 6rem 10% 6rem 8%;
+    padding: 6rem 10% 6rem 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+.about-content .section-label {
+    color: #251a15; 
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+}    
 
 .about-heading {
-    font-size: 3.5rem;
-    line-height: 1.15;
-    margin-bottom: 2rem;
-    color: var(--text-color);
+    font-size: 2.6rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #3f2f27;
+    width: 100%;
+     font-weight: 600;
 }
 
 .about-desc {
     font-size: 1.1rem;
-    color: #635752;
+    color: #A6968C;
     margin-bottom: 3rem;
     line-height: 1.7;
 }
@@ -372,8 +403,21 @@ img {
    SERVICES SECTION
    ========================================= */
 .services-section {
-    padding: 6rem 0;
-    background-color: var(--bg-light);
+    padding: 8rem;
+    background-color:#F9F6F1;
+}
+
+.services-section .section-label {
+    display: block;
+    color: #544138; /* Exact match to the About Veloura color */
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.services-section .section-heading {
+    color: #42332C; 
+    font-weight: 600; 
+    margin-bottom: 4rem; 
 }
 
 .services-grid {
@@ -381,12 +425,15 @@ img {
 }
 
 .service-card {
-    background-color: var(--card-bg);
+    background-color: #F2EBE6;
     padding: 3rem 2rem;
-    border-radius: var(--radius-md);
+    border-radius: 20px;
     text-align: center;
-    box-shadow: var(--shadow-soft);
-    transition: var(--transition);
+    border: 1px solid rgba(84, 65, 56, 0.2);
+    box-shadow: 0 15px 40px rgba(113, 88, 76, 0.06);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-card:hover {
@@ -398,19 +445,22 @@ img {
     width: 64px;
     height: 64px;
     margin: 0 auto 1.5rem;
-    background-color: var(--white);
+    background-color: #E6DCD5;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--accent-color);
-    font-size: 1.5rem;
+    color: #544138;
+    font-size: 1.8rem;
+    transition: all 0.4s ease;
     box-shadow: 0 4px 15px rgba(200, 162, 122, 0.15);
 }
 
 .service-title {
     font-size: 1.4rem;
+    color: #2B201B;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .service-desc {
@@ -427,6 +477,9 @@ img {
     align-items: center;
     gap: 5px;
     position: relative;
+    margin-top: auto;
+    align-self: center;
+    text-decoration: none;
 }
 
 .service-link::after {
@@ -435,16 +488,22 @@ img {
     bottom: -2px;
     left: 0;
     width: 100%;
-    height: 1px;
+    height: 2px;
     background-color: var(--primary-color);
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform 0.3s ease;
+    transition: transform 0.1s ease;
 }
 
 .service-card:hover .service-link::after {
-    transform: scaleX(1);
+    transform: translateY(8px);
+    box-shadow: 0 20px 50px rgba(113, 88, 76, 0.12);
     transform-origin: left;
+}
+.service-card:hover .service-icon {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: scale(1.05);
 }
 
 /* =========================================
@@ -452,6 +511,41 @@ img {
    ========================================= */
 .results-section {
     padding: 8rem 0;
+    background-color: #E2D6CF
+}
+.team-section .section-label {
+    display: block;
+    color: #352923 !important; /* Exact match to "TRANSFORMATIONS" & "WHAT WE OFFER" */
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.team-section .section-heading {
+    color: #42332C !important; /* Exact match to the main headings above! */
+    font-weight: 600;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+.result-title {
+    font-size: 1.4rem; /* Made it slightly larger to match the elegant look */
+    color: #2B201B; /* This is the exact dark espresso color from the Services section! */
+    margin-bottom: 0.5rem;
+    font-weight: 600; /* Makes it slightly thicker so it perfectly matches */
+}
+.results-section .section-heading {
+    color: #42332C; 
+    font-weight: 600;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+.results-section .section-label {
+    display: block;
+    color: #352923; /* Updated to match the darker 'What We Offer' color! */
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 .results-grid {
@@ -526,7 +620,7 @@ img {
    ========================================= */
 .team-section {
     padding: 6rem 0;
-    background-color: var(--bg-light);
+    background-color: #F9F6F1;
 }
 
 .team-card {
@@ -568,13 +662,14 @@ img {
 .team-name {
     font-size: 1.6rem;
     margin-bottom: 0.3rem;
+    color: #42332C
 }
 
 .team-role {
     font-size: 0.9rem;
-    color: var(--accent-color);
+    color:#42332C;
     font-weight: 600;
-    text-transform: uppercase;
+    text-transform: lowercase;
     letter-spacing: 1px;
     margin-bottom: 1rem;
 }
@@ -590,6 +685,21 @@ img {
 .reviews-section {
     padding: 8rem 0;
     overflow: hidden;
+     background-color: #E5D8CF;
+}
+.reviews-section .section-label {
+    display: block;
+    color: #352923; /* Exact match to the previous dark brown labels */
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.testimonials-section .section-heading {
+    color: #261d19; /* Exact match to 'Meet Our Specialists' */
+    font-weight: 600;
+    margin-bottom: 4rem;
+    text-align: center;
 }
 
 .reviews-container {
@@ -645,19 +755,109 @@ img {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+/* ==============================================
+   BOOK SECTION
+   ================================================*/
+   /* =========================================
+   CALL TO ACTION (CTA) SECTION
+   ========================================= */
+.cta-section {
+    padding: 8rem 0;
+    background-color: #F9F6F1; /* Matches your clean page background */
+}
+
+.cta-card {
+    background-color: #EBE4DF; /* The luxurious, warm taupe background for the card */
+    border-radius: 24px;
+    padding: 6rem 2rem;
+    text-align: center;
+    max-width: 1000px; /* Keeps the card from stretching too wide on big screens */
+    margin: 0 auto;
+    border: 1px solid rgba(84, 65, 56, 0.1); /* The delicate outline */
+    box-shadow: 0 15px 40px rgba(113, 88, 76, 0.05); /* Very soft shadow */
+}
+
+.cta-label {
+    display: block;
+    color: #544138;
+    letter-spacing: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.cta-heading {
+    color: #2B201B; /* Deep espresso color */
+    font-size: 3.5rem; /* Large and elegant */
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.cta-desc {
+    color: #8C7A70; /* Soft taupe for the paragraph */
+    font-size: 1.2rem;
+    max-width: 450px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+}
+
+/* --- The Buttons --- */
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap; /* Helps buttons stack nicely on mobile phones */
+}
+
+.cta-btn {
+    padding: 1rem 2.5rem;
+    border-radius: 50px; /* Creates the beautiful pill shape */
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* The dark "Book Appointment" button */
+.cta-btn-solid {
+    background-color: #826659; /* Muted warm brown */
+    color: #FFFFFF;
+    border: 2px solid #826659;
+}
+
+.cta-btn-solid:hover {
+    background-color: #6C5449; /* Darkens slightly on hover */
+    border-color: #6C5449;
+    transform: translateY(-3px);
+}
+
+/* The transparent "Contact Clinic" button */
+.cta-btn-outline {
+    background-color: transparent;
+    color: #2B201B;
+    border: 1px solid rgba(84, 65, 56, 0.3); /* Thin outline */
+}
+
+.cta-btn-outline:hover {
+    border-color: #2B201B;
+    background-color: rgba(84, 65, 56, 0.05); /* Slight fill on hover */
+    transform: translateY(-3px);
+}
 
 /* =========================================
    CONTACT SECTION
    ========================================= */
 .contact-section {
-    background-color: #EBE3DE;
+    background-color: #E2D6CF;
     padding: 8rem 0;
 }
 
 .contact-split {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 5rem;
     align-items: center;
     margin-top: 4rem;
 }
@@ -665,42 +865,42 @@ img {
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 1.8rem;
 }
 
 .contact-item {
     display: flex;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 .contact-icon {
-    width: 40px;
-    height: 40px;
-    background-color: var(--white);
+    width: 45px;
+    height: 45px;
+    background-color: #F4EAE6;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-color);
+    color: #544138;
     font-size: 1rem;
     flex-shrink: 0;
     box-shadow: 0 4px 15px rgba(90, 62, 54, 0.05);
 }
 
 .contact-text h4 {
-    font-size: 0.8rem;
-    letter-spacing: 2px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: var(--accent-color);
-    margin-bottom: 0.3rem;
-    font-family: var(--font-body);
+    color: #8C7A70;
+    margin-bottom: 0.2rem;
+    font-family: 600;
 }
 
 .contact-text p {
-    font-size: 1rem;
-    color: var(--text-color);
-    font-weight: 500;
+    font-size: 1.1rem;
+    color: #5b4840;
+    font-weight: 400;
 }
 
 .contact-map {
@@ -714,14 +914,28 @@ img {
    FOOTER
    ========================================= */
 .footer {
-    background-color: #3B2A23; /* Dark brown from image */
+    background-color: #35251e; /* Dark brown from image */
     color: rgba(255,255,255,0.8);
-    padding: 5rem 0 2rem;
+    padding: 2rem 0 1rem 0;
 }
 
 .footer .logo {
-    color: var(--white);
-    margin-bottom: 1.5rem;
+    color: #9C8377;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+.footer-col p {
+    line-height: 1.4; /* Tighter line spacing */
+    font-size: 0.8rem; /* Reduced from 0.95rem */
+    color: #B5A8A0;
+}
+.footer-heading {
+    font-size: 0.8rem; /* Reduced from 0.85rem */
+    letter-spacing: 1.5px;
+    color: #8C7A70;
+    margin-bottom: 0.8rem; /* Brought the links much closer to the headings! */
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 .footer-grid {
@@ -732,9 +946,10 @@ img {
 }
 
 .footer-desc {
-    color: rgba(255,255,255,0.7);
+    color: #858482;
     max-width: 300px;
     margin-bottom: 2rem;
+    font-weight: 400;
 }
 
 .social-icons {
@@ -759,22 +974,25 @@ img {
 
 .footer-links h4, .footer-contact h4 {
     font-family: var(--font-body);
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     margin-bottom: 1.5rem;
-    font-weight: 600;
+   
 }
 
 .footer-links ul {
     list-style: none;
+    font-size: 0.8rem;
 }
 
 .footer-links li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.4
 }
 
 .footer-links a {
     color: rgba(255,255,255,0.7);
     transition: var(--transition);
+    gap: 0.3rem;
 }
 
 .footer-links a:hover {
@@ -784,22 +1002,24 @@ img {
 
 .footer-contact p {
     margin-bottom: 0.8rem;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
 }
 
-.footer-social h4 {
+.footer-links h4, .footer-contact h4, .footer-social h4 {
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-bottom: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: #8C7A70; /* That beautiful muted taupe color */
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--white);
 }
 
 .footer-contact i {
     color: var(--accent-color);
     margin-top: 5px;
+    font-size: 0.8rem;
+    
 }
 
 .footer-bottom {
@@ -807,7 +1027,176 @@ img {
     padding-top: 2rem;
     border-top: 1px solid rgba(255,255,255,0.1);
     color: rgba(255,255,255,0.5);
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+}
+/* =========================================
+   BOOKING MODAL STYLES
+   ========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(43, 32, 27, 0.6); /* Dark espresso overlay */
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.booking-modal {
+    background-color: #FDFBF8; /* Warm cream */
+    width: 90%;
+    max-width: 650px;
+    border-radius: 20px;
+    padding: 3rem;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px; right: 25px;
+    background: none; border: none;
+    font-size: 1.5rem; color: #8C7A70;
+    cursor: pointer;
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #2B201B;
+    margin-bottom: 2rem;
+}
+
+/* Progress Tracker */
+.progress-tracker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+}
+
+.step-indicator {
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    opacity: 0.4; transition: all 0.3s ease;
+}
+
+.step-indicator.active, .step-indicator.completed { opacity: 1; }
+
+.step-circle {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background-color: #E6DCD5;
+    color: #544138;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 0.85rem;
+}
+
+.step-indicator.active .step-circle, .step-indicator.completed .step-circle {
+    background-color: #71584c; color: #fff;
+}
+
+.step-indicator span { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #544138;}
+.step-line { flex: 1; height: 1px; background-color: #E6DCD5; margin: 0 10px; transform: translateY(-10px); }
+
+/* Steps Content */
+.modal-step { display: none; animation: fadeIn 0.4s ease; }
+.modal-step.active { display: block; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Selection Grids & Cards */
+.selection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.selection-card {
+    background-color: #F4EAE6;
+    border: 2px solid transparent;
+    padding: 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.selection-card:hover { border-color: rgba(113, 88, 76, 0.3); }
+.selection-card.selected { border-color: #71584c; background-color: #EFE4DE; }
+.selection-card h4 { font-family: var(--font-body); font-size: 0.95rem; margin-bottom: 0.3rem; color: #2B201B; font-weight: 600; }
+.selection-card h4 i { color: #8C7A70; margin-right: 5px; }
+.selection-card p { font-size: 0.8rem; color: #8C7A70; margin-bottom: 1rem; line-height: 1.3;}
+.card-meta { font-size: 0.8rem; color: #544138; display: flex; justify-content: space-between;}
+
+/* List (Specialists) */
+.selection-list { display: flex; flex-direction: column; gap: 0.8rem; }
+.list-card { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.5rem; }
+.list-card p { margin-bottom: 0; }
+.list-avatar { width: 45px; height: 45px; border-radius: 50%; background-color: #E2D6CF; display: flex; align-items: center; justify-content: center; color: #544138; font-family: var(--font-heading); font-size: 1.2rem; }
+.list-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; }
+
+/* Form Elements */
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; font-size: 0.75rem; letter-spacing: 1px; color: #8C7A70; margin-bottom: 0.5rem; text-transform: uppercase; }
+.form-group .req { color: #D9534F; }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 1rem;
+    border: 1px solid #E6DCD5; border-radius: 8px;
+    background-color: #F4EAE6; color: #2B201B;
+    font-family: var(--font-body); font-size: 0.95rem;
+}
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: #71584c; }
+
+/* Summary Step */
+.summary-box { background-color: #F4EAE6; padding: 2rem; border-radius: 12px; border: 1px solid #E6DCD5; }
+.summary-label { font-size: 0.75rem; letter-spacing: 1.5px; color: #8C7A70; margin-bottom: 1.5rem; text-transform: uppercase; }
+.summary-row { display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 0.95rem; border-bottom: 1px solid rgba(140, 122, 112, 0.1); padding-bottom: 0.5rem;}
+.summary-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0;}
+.summary-row span { color: #8C7A70; }
+.summary-row strong { color: #2B201B; font-weight: 500;}
+
+/* Mock Calendar & Time */
+.datetime-container { text-align: center; }
+.mock-calendar { background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid #E6DCD5; display: inline-block; margin-bottom: 2rem;}
+.cal-header { display: flex; justify-content: space-between; margin-bottom: 1rem; color: #2B201B; font-weight: 600;}
+.cal-grid { display: grid; grid-template-columns: repeat(7, 35px); gap: 5px; font-size: 0.85rem; color: #8C7A70;}
+.cal-grid span { padding: 8px 0; }
+.cal-active { background-color: #71584c; color: #fff !important; border-radius: 5px; }
+.cal-disabled { background-color: #E6DCD5; border-radius: 5px;}
+.time-label { font-size: 0.75rem; letter-spacing: 1.5px; color: #8C7A70; margin-bottom: 1rem; text-transform: uppercase; text-align: left;}
+.slots-grid { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.slot-btn { padding: 0.6rem 1.2rem; border-radius: 20px; border: 1px solid #E6DCD5; background: #F4EAE6; color: #2B201B; cursor: pointer; transition: all 0.2s ease;}
+.slot-btn.active { background: #71584c; color: #fff; border-color: #71584c; }
+
+/* Success Screen */
+.success-screen { text-align: center; }
+.success-icon { width: 60px; height: 60px; background-color: #E6DCD5; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #71584c; margin-bottom: 1.5rem; }
+.success-screen h2 { font-size: 1.8rem; margin-bottom: 0.5rem; color: #2B201B;}
+.success-screen p { color: #8C7A70; margin-bottom: 2rem; }
+.success-box { text-align: left; }
+
+/* Footer Buttons */
+.modal-footer { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2.5rem; }
+.btn-modal-continue, .btn-modal-outline {
+    flex: 1; padding: 1rem; border-radius: 50px; font-weight: 500; font-size: 1rem; cursor: pointer; transition: all 0.3s; text-align: center; text-decoration: none;
+}
+.btn-modal-continue { background-color: #71584c; color: #fff; border: none; }
+.btn-modal-continue:hover { background-color: #4A332B; }
+.btn-modal-outline { background-color: transparent; border: 1px solid #E6DCD5; color: #2B201B; }
+.btn-modal-back {
+    flex: 1; padding: 1rem; border-radius: 50px; background-color: transparent; border: 1px solid #71584c; color: #71584c; font-weight: 500; cursor: pointer; transition: all 0.3s;
+}
+.btn-modal-back:hover { background-color: rgba(113, 88, 76, 0.05); }
+
+@media (max-width: 600px) {
+    .booking-modal { padding: 2rem 1.5rem; width: 95%; }
+    .selection-grid { grid-template-columns: 1fr; }
+    .step-indicator span { display: none; } /* Hide text on small screens */
 }
 
 /* =========================================
